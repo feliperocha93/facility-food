@@ -1,0 +1,30 @@
+#home {
+  height: calc(100vh - 77px);
+  padding-top: 0;
+}
+
+.content-home {
+  display: flex;
+  flex-direction: column;
+  height: 50%;
+  justify-content: space-around;
+  padding-top: 30px;
+}
+
+.introducao-icones {
+  text-align: center;
+  img {
+    height: 36px;
+    margin: 0 7px;
+  }
+}
+
+.cta-produtos {
+  background: url('../../imagens/background-lanches-baguetes.png') center no-repeat;
+  background-size: cover;
+}
+
+.cta-eventos {
+  background: url('../../imagens/background-lanches-eventos.png') center no-repeat;
+  background-size: cover;
+}
