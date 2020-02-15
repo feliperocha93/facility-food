@@ -6,7 +6,6 @@
 .content-home {
   display: flex;
   flex-direction: column;
-  height: 50%;
   justify-content: space-around;
   padding-top: 30px;
 }
@@ -20,11 +19,11 @@
 }
 
 .cta-produtos {
-  background: url('../../imagens/background-lanches-baguetes.png') center no-repeat;
+  background: url('../../imagens/background-lanches-baguetes.jpg') center no-repeat;
   background-size: cover;
 }
 
 .cta-eventos {
-  background: url('../../imagens/background-lanches-eventos.png') center no-repeat;
+  background: url('../../imagens/background-lanches-eventos.jpg') center no-repeat;
   background-size: cover;
 }

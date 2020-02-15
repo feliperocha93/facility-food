@@ -3,17 +3,29 @@
   display: flex;
   justify-content: space-between;
   padding: 10px 0;
-    img {
+  img {
     border: 2px solid black;
     border-radius: 5px;
     @include box-shadow(0 2px 2px rgba(0,0,0,.25));
     height: 52px;
     padding: 4px;
     width: 52px;
+    @include responsive(desktop) {
+      box-shadow: none;
+      height: 90px;
+      right: 0;
+      padding: 5px;
+      position: absolute;
+      top: 10px;
+      width: 90px;
     }
-    span {
-    @include titulo(30, 2);
-    }
+  }
+  span {
+  @include titulo(30, 2);
+  @include responsive(desktop) {
+    @include titulo(42, 2);
+  }
+  }
 }
 
 .header-menu {
@@ -23,8 +35,23 @@
   transition: max-height .5s ease-in-out;
   width: 100%;
   z-index: 1;
+  @include responsive(desktop) {
+    max-height: 500px;
+    margin-bottom: 0;
+    margin-top: 20px;
+    text-align: left;
+  }
   ul {
     margin-bottom: 20px;
+  }
+  li {
+    @include responsive(desktop) {
+      display: inline-block;
+      padding: 0 45px;
+      &:nth-of-type(1) {
+        padding-left: 0;
+      }
+    }
   }
   li a {
     display: block;
@@ -33,6 +60,10 @@
     text-transform: uppercase;
     transition: 1s ease;
     @include tipo-1(18, 1);
+    @include responsive(desktop) {
+      color: $txt-2;
+      padding: 0;
+    }
   }
   span {
     margin-top: 20px;
@@ -42,12 +73,6 @@
     margin-top: 36px;
     width: 150px;
   }
-  #botaoFechaMenu {
-    position: absolute;
-    right: 15px;
-    top: 15px;
-    width: 48px;
-  }
   &.active {
     max-height: 500px;
     li a {
@@ -55,3 +80,4 @@
     }
   }
 }
+

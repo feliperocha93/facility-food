@@ -1,8 +1,9 @@
 // variaveis do grid
 $cols: 12;
 $gutter: 20px;
-$desktop-width: 960px;
-$tablet-width: 768px;
+$big-width: 1279px;
+$desktop-width: 959px;
+$tablet-width: 767px;
 $mobile-width: 480px;
 
 // Box-sizing
@@ -12,8 +13,13 @@ $mobile-width: 480px;
 
 // Mixin de media-querie
 @mixin responsive($device) {
+  @if $device == big {
+    @media screen and (min-width: #{$big-width}) {
+      @content;
+    }
+  }
   @if $device == desktop {
-    @media screen and (min-width: #{$desktop-width}) {
+    @media screen and (min-width: #{$desktop-width}) and (max-width: #{$big-width}) {
       @content;
     }
   }
@@ -30,7 +36,6 @@ $mobile-width: 480px;
 }
 
 // Função do grid
-
 @function grid($col, $offset: false) {
   $width: ($col / $cols) * 100 + '%';
   $result: calc(#{$width} - #{$gutter});
@@ -42,7 +47,6 @@ $mobile-width: 480px;
 }
 
 // Gera as classes de grid
-
 @for $i from 1 through $cols {
   .grid-#{$i} {
     width: grid($i);
@@ -50,7 +54,6 @@ $mobile-width: 480px;
 }
 
 // Mixin estrutura do grid
-
 @mixin grid-structure {
   float: left; 
   min-height: 1px;
@@ -69,7 +72,6 @@ $mobile-width: 480px;
 }
 
 // Gera as classes de offset
-
 @for $i from 1 through $cols {
   .offset-#{$i} {
     margin-left: grid($i, offset);
@@ -84,7 +86,6 @@ $mobile-width: 480px;
 }
 
 //Mixin de clearfix
-
 @mixin clearfix {
   &:after, &before {
     content: '';
@@ -94,11 +95,20 @@ $mobile-width: 480px;
 }
 
 @mixin container {
-  max-width: $desktop-width;
+  max-width: $big-width;
   margin: 0 auto;
   position: relative;
+  padding-left: 20px;
+  padding-right: 20px;
+  @include responsive(desktop) {
+    max-width: $tablet-width;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
   @include responsive(tablet) {
     max-width: $tablet-width;
+    padding-left: 8%;
+    padding-right: 8%;
   }
   @include responsive(mobile) {
     max-width: $mobile-width;
