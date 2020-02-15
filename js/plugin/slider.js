@@ -161,17 +161,6 @@ class SlideNav extends Slide {
     this.bindControlEvents();
   }
 
-  addArrow(prev, next) {
-    this.prevElement = document.querySelector(prev);
-    this.nextElement = document.querySelector(next);
-    this.addArrowEvent();
-  }
-
-  addArrowEvent() {
-    this.prevElement.addEventListener('click', this.activePrevSlide);
-    this.nextElement.addEventListener('click', this.activeNextSlide);
-  }
-
   createControl() {
     const control = document.createElement('ul');
     control.dataset.control = 'slide';
@@ -210,7 +199,6 @@ class SlideNav extends Slide {
 
 const slide = new SlideNav('.slide', '.wrapper');
 slide.init();
-slide.addArrow('.prev', '.next');
 slide.addControl('.custom-controls');
 
 const timer = document.querySelectorAll('.custom-controls > li');

@@ -80,25 +80,3 @@
   opacity: 1;
   transform: scale(1);
 }
-
-.arrow-nav {
-  display: flex;
-  justify-content: space-around;
-  margin: 10px;
-  @include responsive(mobile) {
-    display: none;
-  }
-}
-
-.arrow-nav button {
-  background: $bg-1 url('../imagens/arrow.svg') center center no-repeat;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  height: 36px;
-  width: 36px;
-}
-
-.arrow-nav button.prev {
-  transform: rotate(-180deg);
-}
