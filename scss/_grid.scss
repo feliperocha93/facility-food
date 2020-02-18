@@ -19,12 +19,12 @@ $mobile-width: 480px;
     }
   }
   @if $device == desktop {
-    @media screen and (min-width: #{$desktop-width}) and (max-width: #{$big-width}) {
+    @media screen and (min-width: #{$desktop-width}) {
       @content;
     }
   }
   @else if $device == tablet {
-    @media screen and (min-width: #{$tablet-width}) and (max-width: #{$desktop-width}) {
+    @media screen and (min-width: #{$tablet-width}) {
       @content;
     }
   }
@@ -98,20 +98,10 @@ $mobile-width: 480px;
   max-width: $big-width;
   margin: 0 auto;
   position: relative;
-  padding-left: 20px;
-  padding-right: 20px;
-  @include responsive(desktop) {
-    max-width: $tablet-width;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-  @include responsive(tablet) {
-    max-width: $tablet-width;
-    padding-left: 8%;
-    padding-right: 8%;
-  }
+  padding-left: 4%;
+  padding-right: 4%;
   @include responsive(mobile) {
-    max-width: $mobile-width;
+    max-width: $tablet-width;
     padding-left: 20px;
     padding-right: 20px;
   }
