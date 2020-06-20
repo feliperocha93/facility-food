@@ -2,6 +2,6 @@
 
 Site institucional inspirado em uma empresa do ramo de alimentos.
 
-Link: https://facilityfood.netlify.com/
+Link: https://facilityfood.netlify.app/
 
 ##### Site fictício para portfólio
